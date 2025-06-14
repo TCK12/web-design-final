@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+.blur {
+    position: absolute;
+    box-shadow: 0 0 1000px 50px #1d4ed8;
+    z-index: -100;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #18181B;
+}
+
+h2 {
+    color: #fff;
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 2.5rem;
+}
+
+.container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 5rem 2rem;
+}
+
+.container .header {
+    position: relative;
+    z-index: 2;
+}
+
+.container .header::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: -20px;
+    width: 60px;
+    height: 4px;
+    background: #3b82f6;
+    border-radius: 2px;
+    z-index: 1;
+}
+
+.container .header {
+    margin-bottom: 1rem;
+    color: #fff;
+    font-size: 2rem;
+    font-size: 600;
+    text-transform: uppercase;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 4rem;
+    padding: .8rem 1.6rem;
+    border-radius: .5rem;
+    background: #3b82f6;
+    color: #fff;
+    font-weight: 500;
+    transition: background .3s;
+}
+
+.btn:hover {
+    background: #2563eb;
+}
+
+.container .content {
+    display: flex;
+    margin-top: 2rem;
+}
+
+.container .content .desc {
+    padding: 3rem 2rem;
+    margin-right: 2rem;
+}
+
+.container .content p {
+    color: #fff;
+    font-size: 1rem;
+}
+
+.content .img {
+    /* padding: 3rem 2rem; */
+}
+
+.content .img img {
+    width: 90%;
+    transition: transform .5s ease;
+}
+
+.content .img img:hover {
+    transform: scale(1.03) rotate(1deg);
+}
+
+/* Slider Container */
+.slider-container {
+    position: relative;
+    padding: 1rem 0;
+    max-width: 100%;
+    margin: auto;
+    margin-bottom: 4rem;
+}
+
+/* Wrapper to hide overflow, fixed height */
+.slider-wrapper {
+    overflow: hidden;
+    width: 100%;
+    height: 320px;
+}
+
+/* Flex row slider, no wrapping */
+.slider {
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform 0.5s ease;
+}
+
+/* Each slide: exactly 1/3 of wrapper */
+.slide {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image: 2:3 ratio, height fills wrapper */
+.slide img {
+    aspect-ratio: 2 / 3;
+    height: auto;
+    width: 300px;
+    object-fit: contain;
+}
+
+/* Navigation buttons */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(29, 78, 216, 0.6);
+    border: none;
+    border-radius: 50%;
+    padding: 0.5rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.slider-btn i {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.prev {
+    left: 1rem;
+}
+
+.next {
+    right: 1rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .slider-wrapper {
+        height: 240px;
+    }
+
+    .slide img {
+        height: 240px;
+    }
+
+    .slider-btn {
+        padding: 0.4rem;
+    }
+
+    .slider-btn i {
+        font-size: 1.2rem;
+    }
+}
