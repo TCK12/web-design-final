@@ -64,13 +64,13 @@ footer .column>a:hover {
     text-align: center;
 }
 
-@media (width < 900px) {
+@media (max-width: 1024px) {
     footer {
         grid-template-columns: 1fr 200px;
     }
 }
 
-@media (width < 600px) {
+@media (max-width: 768px) {
     footer {
         grid-template-columns: 1fr, 150px;
     }

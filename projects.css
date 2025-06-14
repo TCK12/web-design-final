@@ -26,19 +26,15 @@ body {
 h2 {
     color: #fff;
     text-align: center;
-    margin-top: 4rem;
+    margin-top: 8rem;
     font-size: 2.5rem;
-}
-
-.container {
-    max-width: 1400px;
-    margin: auto;
-    padding: 5rem 2rem;
 }
 
 .container .header {
     position: relative;
     z-index: 2;
+    font-size: 1rem;
+    font-weight: 100;
 }
 
 .container .header::before {
@@ -53,7 +49,7 @@ h2 {
     z-index: 1;
 }
 
-.container .header {
+.content .header {
     margin-bottom: 1rem;
     color: #fff;
     font-size: 2rem;
@@ -61,10 +57,20 @@ h2 {
     text-transform: uppercase;
 }
 
+.container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 5rem 2rem;
+}
+
+.content .btn {
+    margin-top: 4rem;
+
+}
+
 .btn {
     display: inline-block;
-    margin-top: 4rem;
-    padding: .8rem 1.6rem;
+    padding: .4rem .8rem;
     border-radius: .5rem;
     background: #3b82f6;
     color: #fff;
@@ -76,33 +82,34 @@ h2 {
     background: #2563eb;
 }
 
-.container .content {
-    display: flex;
-    margin-top: 2rem;
+.content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 4rem;
+    gap: 4rem;
 }
 
-.container .content .desc {
-    padding: 3rem 2rem;
-    margin-right: 2rem;
+.content .desc {
+    padding: 3rem 1rem;
 }
 
-.container .content p {
+.content p {
     color: #fff;
     font-size: 1rem;
 }
 
 .content .img {
-    /* padding: 3rem 2rem; */
+    padding: 3rem 1rem;
 }
 
 .content .img img {
-    width: 90%;
+    width: 100%;
     transition: transform .5s ease;
 }
 
-.content .img img:hover {
+/* .content .img img:hover {
     transform: scale(1.03) rotate(1deg);
-}
+} */
 
 /* Slider Container */
 .slider-container {
@@ -170,8 +177,96 @@ h2 {
     right: 1rem;
 }
 
+@media (max-width: 1024px) {
+
+    .container {
+        padding: 3rem 1.5rem;
+    }
+
+    /* Chuyển grid 2 cột thành 1 cột cho nội dung và ảnh */
+    .content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content .desc {
+        order: 1;
+    }
+
+    .content .img {
+        order: 2;
+    }
+
+    .content .desc,
+    .content .img {
+        padding: 1.5rem 0;
+    }
+
+    .content .header {
+        font-size: 1.75rem;
+    }
+
+    .content .btn {
+        margin-top: 2rem;
+        padding: 0.7rem 1.4rem;
+    }
+}
+
 /* Mobile adjustments */
 @media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+        margin-top: 4rem;
+    }
+
+    .container {
+        padding: 2rem 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content {
+        /* Luôn 1 cột */
+        grid-template-columns: 1fr;
+    }
+
+    .content .desc {
+        order: 1;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    .content .img {
+        order: 2;
+    }
+
+    .content .img img {
+        width: 100%;
+        height: auto;
+    }
+
+    .content .header {
+        font-size: 1.5rem;
+    }
+
+    .content p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .content .btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+
+    /* Giảm margin giữa các section */
+    section.container {
+        margin-bottom: 2rem;
+    }
+
     .slider-wrapper {
         height: 240px;
     }

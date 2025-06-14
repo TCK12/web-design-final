@@ -218,7 +218,7 @@ section .header {
     border-color: #1e40af;
 }
 
-@media (width < 900px) {
+@media (max-width: 1024px) {
     header {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -236,7 +236,7 @@ section .header {
     }
 }
 
-@media (width < 600px) {
+@media (max-width: 768px) {
     header .image::before {
         display: none;
     }
